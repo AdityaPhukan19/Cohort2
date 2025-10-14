@@ -7,158 +7,194 @@
 html, body {
   height: 100%;
   width: 100%;
+ 
+}
+
+@font-face {
+    font-family: bent;
+    src: url(Saphifen.ttf);
+}
+::-webkit-scrollbar{
+    background: transparent;
 }
 
 main{
     height:100%;
     width:100%;
-    display:grid;
-    grid-template-rows: 40px 1fr 1fr;
-
+    background-color: black;
+    display: grid;
+    grid-template-columns: 500px 1fr 1fr 200px;
+    grid-template-rows: 40px 200px 300px 300px 40px;
+    grid-template-areas: "header header header header"
+                          "section1 section2 section2 section3"
+                          "section1 section4 section5 section5"
+                          "section6 section7 section7 section7"  
+                          "footer footer footer footer"  
+    ;
+    gap:20px;
+    overflow: auto;
+    padding-right:20px;
+    padding-left:20px;
 }
 header{
-        background-color: rgb(29, 30, 29);
-
-    display: flex;
+    grid-area: header;
+    background-color:black;
+    display:flex;
     justify-content: space-between;
-    padding:10px;
-}
-header h2{
-    display:inline-block;
-    color: white;
+    align-items: center;
 }
 header a{
-    display: inline-block;
     color: white;
+    text-decoration: none;
 }
-header #anchor{
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
+header h4{
+    font-size: 25px;
+    color:white;
 }
-header #anchor #home{
-    color: red;
+header h2{
+    font-size: 18px;
+    color:white;
 }
+
 #section1{
-            background-color: rgb(29, 30, 29);
-
-    padding:30px;
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-}
-#section1 #card1{
-    height:200px;
-    width: 280px;
-    background-color: white;
-    position: relative;
-}
-
-#section1 #card1 img{
-    height:100%;
-    width:100%;
-    object-fit: cover;
-    object-position: center;
-}
-#section1 #card1 #bottom1{
-    display: flex;
-    width: 100%;
-    color: white;
-    position: absolute;
-    justify-content: space-between;
-    background:linear-gradient(transparent,black);
-}
- #section1 #card1:hover #bottom1{
-    bottom:0%;
-}
-#section1 #detail1{
-    display: flex;
-    flex-direction: column;
-    gap:20px;
-    
-}
-#section1 #detail1 h1{
-    background-clip: text;
+    border-radius: 20px;
+    grid-area: section1;
+    background-color: green;
+background-image: url("https://i.redd.it/1zw15t9s64r91.jpg");    background-position: top;
     background-size: cover;
-    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyeTFuMDVsenE0OHN2dHZ2eG1qc2l5ZHhoNDVuMXZuMW1rZmh0Z3VqZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mrVP75mtRNnmE/giphy.gif");
-    color:transparent;
-    font-size: 40px;
 }
-#section1 #detail1 p{
-    color:white;
-    font-size: 17px;
-    font-weight: 100;
+#section1:hover{
+    background-image: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmlya2tzb25rNWtnZGo4Z3A1OW05ZDYyZHFwNWpxeDFqOWVsMnJqcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R9TbpugxAhx9UnerhD/giphy.gif");
+    background-position: center;
+    background-size: cover;
+    cursor:all-scroll;
+    transform: scaleX(2);
 }
-#section1 #detail1 button{
-     width:60%;
-    padding:10px;
-    border: 2px solid rgb(246, 237, 237);
-    background-color: transparent;
-    color: white;
-    transition: all ease 5s;
 
-}
-#section1 #detail1 button:hover{
-    cursor: pointer;
-    background: linear-gradient(to right,red,black);
-}
 #section2{
-            background-color: rgb(29, 30, 29);
-    padding:30px;
+    border-radius: 20px;
+    grid-area: section2;
+    background-color: royalblue;
     display: flex;
-    position: relative;
     justify-content: center;
-    gap: 80px;
-}
-#section2 #detail2{
-    display: flex;
-    flex-direction: column;
-    gap:20px;
-}
-#section2 #detail2 h1{
-   background-clip: text;
-   background-image: url("https://i.pinimg.com/originals/14/e9/c1/14e9c1fa08891b41f23b7cdd02904c0e.gif");
-   background-size: cover;
-    color:transparent;
-    font-size: 40px;
-}
-#section2 #detail2 p{
-    color:white;
-    font-size: 17px;
-    font-weight: 100;
-}
-#section2 #detail2 button{
-     width:60%;
-    padding:10px;
-    border: 2px solid rgb(242, 231, 231);
-    background-color: transparent;
-    color: white;
-}
-#section2 #detail2 button:hover{
-    cursor: pointer;
-    background: linear-gradient(to right,green,black);
-}
-#section2 #card2{
-    position: relative;
-    height:200px;
-    width: 280px;
-    background-color: white;
-}
-#section2 #card2 img{
-    height:100%;
-    width:100%;
-    object-fit: cover;
-    object-position: center;
-}
-#section2 #card2 #bottom2{
-    display: flex;
-    width: 100%;
-    color: white;
-    position: absolute;
-    justify-content: space-between;
-    background:linear-gradient(transparent,black);
+    align-items: center;
     transition: all ease 0.3s;
 }
- #section2 #card2:hover #bottom2{
-    bottom:0%;
+#section2 h1{
+    color:white;
+    font-family: bent;
+    font-size: 60px;
+}
+#section2:hover{
+    box-shadow: 10px 10px 10px white;
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+#section3{
+    border-radius: 20px;
+    grid-area: section3;
+    background-color: royalblue;
+    background-image: url("https://w0.peakpx.com/wallpaper/108/899/HD-wallpaper-thor-thor-superheroes-deviantart.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 10px 7px 10px white;
+    transition: all ease-in 0.7s;
+    
+}  
+#section3:hover{
+    background-image: url("https://images.hdqwalls.com/wallpapers/thor-new-hammer-4k-qu.jpg");
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+#section4{
+    border-radius: 20px;
+    grid-area: section4;
+    background-color: rgb(92, 95, 104);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_J3oESqn8LCbsUu2vhsDjoVqgLRanSaGi0g&s");
+    background-size: cover;
+    background-position: center;
+    transition: all ease-in-out 0.3s;
+    box-shadow: 5px 8px 9px white;
+}  
+#section4:hover{
+    background-image: url("https://i.pinimg.com/736x/24/43/03/2443035d07daea1929031c5701c85cef.jpg");
+    cursor: pointer;
+        transform: scale(1.03);
+
+}
+
+#section5{
+    border-radius: 20px;
+    grid-area: section5;
+    background-color: rgb(162, 177, 220);
+    background-image: url("https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774");
+    background-size: cover;
+    background-position: center;
+  transition: filter 0.4s ease, transform 0.4s ease;
+
+} 
+#section5:hover{
+    background-image: url("https://cdn.dribbble.com/userupload/4724668/file/original-9f4d5d512e285e04ecc555bf68368e2c.gif");
+    background-position: top;
+     filter: blur(0);
+  transform: scale(1.02);
+}
+
+#section6{
+    border-radius: 20px;
+    grid-area: section6;
+    background-color: rgb(9, 23, 6);
+    background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc293ODVnZmFiYjZqZnN5bWZyNm9ubGdsNHU0ZzJvMmFxOWhwbGZqeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HC8XnGadASdvIOQVq9/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+}  
+#section6:hover{
+     transform: scale(1.05);
+     cursor: grab;
+}
+#section7{
+    border-radius: 20px;
+    grid-area: section7;
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}   
+#section7 h2{
+    font-size: 50px;
+    background: url("https://onlinegiftools.com/images/examples-onlinegiftools/rotating-rainbow-colors.gif");
+    -webkit-text-stroke: 0.3px white;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    transition: cubic-bezier(0.47, 0, 0.745, 0.715);
+    
+}     
+#section7:hover{
+    transform: scale(1.03);
+    cursor:grab;
+    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDA4ODZrbDJ2bG10cXZjM3g5aHQ5cHExYnlndTJmbGpvYmcweWlnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gFPxNhzEWdFCCRAqf0/giphy.gif");
+    background-size: cover;
+    background-position: center;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    grid-area: footer;
+    background-color: rgb(7, 7, 7);
+}
+footer h3{
+    color: white;
+}
+footer h4{
+    color:white
 }
