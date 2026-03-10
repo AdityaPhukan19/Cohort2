@@ -7,18 +7,42 @@
 html,body{
     height: 100%;
     width: 100%;
-    cursor: none;
 }
 
 main{
     height: 100%;;
     width: 100%;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h2{
+    font-size: 50px;
+    color: white;
+    
+}
+.box{
+    width: 500px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 10px;
+    
 }
 
-#cursor{
-    height: 60px;
-    position: fixed;
-    transform: translate(-50%,-50%);
+
+
+.one{
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
+
