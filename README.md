@@ -1,12 +1,4 @@
-This is a css animation effect that shows a border animation
+this is a css animation made with the anchor property
 
-tech stack:
-css
--proerty
-@keyframes
-animation
-transition
-conic gradient
-linear gradient
-box shadow
-text shadow
+anchor is given to body
+and to the box on hover

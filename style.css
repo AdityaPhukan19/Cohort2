@@ -7,70 +7,48 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-color:#000;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #000;
 }
-
 body{
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  /* gap: 20px; */
+        anchor-name: --some-anchor;
 
-@property --rotate{
-  syntax:"<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes borderAnimate{
-  from{
-    --rotate:0deg;
-  }
-  to{
-    --rotate:360deg;
-  }
 }
 .box{
-  max-width: 150px;
-  padding-inline: 10px;
-  padding-bottom: 10px;
-  color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  /* box-shadow: 0 0 50px rgb(255, 0, 123); */
-  border-radius: 15px;
-  background: 
-  linear-gradient(black) padding-box,
-  conic-gradient(from var(--rotate),black,rgb(255, 0, 123),black) border-box;
-  border:0px solid rgba(255, 255, 255, 0);
-  animation: borderAnimate 5s infinite;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-  transition: all 0.3s linear;
-  box-shadow: 0 0 0px rgb(255, 0, 123);
-  color: white;
-  text-shadow: 0 0 0px rgb(255, 0, 123);
+  height: 200px;
+  width: 200px;
 }
 
-.box img{
-  width: 100%;
+.red{
+  background-color: rgb(209, 8, 8);
 }
 
 .box:hover{
-  animation-play-state: running;
-  border-width:5px;
-  box-shadow: 0 0 50px rgb(255, 0, 123);
-  color: rgb(255, 0, 123);
-  text-shadow: 0 0 10px rgb(255, 0, 123) ;
+      anchor-name: --some-anchor;
+
+}
+.blue{
+  background-color: rgb(3, 3, 161);
 }
 
-h1{
-  font-size: 18px;
+.green{
+  background-color: rgb(5, 130, 5);
 }
 
-p{
-  font-size: 12px;
+.anchor{
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+ 
+  top: anchor(top);
+  left: anchor(left);
+  bottom: anchor(bottom);
+  right: anchor(right);
+  position-anchor: --some-anchor;
+  transition: all 0.3s linear;
+  mix-blend-mode: difference;
+  pointer-events: none;
 }
