@@ -1,6 +1,12 @@
-this is metric text(a text that changes randomly)
+This is a css animation effect that shows a border animation
 
-tech:
+tech stack:
 css
-html
-dom(js)
+-proerty
+@keyframes
+animation
+transition
+conic gradient
+linear gradient
+box shadow
+text shadow
